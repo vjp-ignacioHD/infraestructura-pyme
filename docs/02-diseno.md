@@ -2,7 +2,7 @@
 
 > 📌 **Documento de arquitectura**: Define la topología, componentes, flujos de datos y decisiones técnicas del sistema.
 > 
-> 📅 **Versión**: 1.0 | 📆 **Fecha**: 2026-05-26 | 👥 **Autores**: [Nombre A] / [Nombre B]
+> 📅 **Versión**: 1.0 | 📆 **Fecha**: 2026-05-26 | 👥 **Autores**: Eva Nacho
 > 🔗 **Trazabilidad**: ← `docs/01-analisis.md` | → `docs/03-planificacion.md` | → `docs/04-instalacion/`
 
 ---
@@ -62,7 +62,7 @@ graph TB
 | Componente | Versión | Función |
 |------------|---------|---------|
 | Ubuntu Server | 22.04 LTS | SO base |
-| Apache | 2.4.52+ | Servidor web |
+| Apache | Apache 2.4.60 | Servidor web |
 | PHP | 8.1.x | Ejecución de aplicaciones |
 | MySQL | 8.0 | Gestión de datos |
 | UFW | 0.36.1 | Firewall básico |
