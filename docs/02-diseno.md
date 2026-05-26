@@ -1,15 +1,62 @@
-# ️ Diseño de Infraestructura
+# 🏗️ 02. Diseño de Infraestructura
 
-## 1. Diagrama de Arquitectura
+> 📌 **Documento de arquitectura**: Define la topología, componentes, flujos de datos y decisiones técnicas del sistema.
+> 
+> 📅 **Versión**: 1.0 | 📆 **Fecha**: 2026-05-26 | 👥 **Autores**: [Nombre A] / [Nombre B]
+> 🔗 **Trazabilidad**: ← `docs/01-analisis.md` | → `docs/03-planificacion.md` | → `docs/04-instalacion/`
+
+---
+
+## 1. Arquitectura General del Sistema
+
+### 1.1. Diagrama de Arquitectura Lógica
+
 ```mermaid
-graph TD
-    Internet[Internet] --> LB[HAProxy / Futuro Balanceador]
-    LB --> APACHE[Apache 2.4 + PHP 8.1]
-    APACHE --> DB[(MySQL 8.0)]
-    APACHE --> MON[Netdata / Monitorización]
-    APACHE --> FW[UFW + Fail2ban]
-    DB --> BK[Backups mysqldump + rsync]
-
+graph TB
+    subgraph "Internet"
+        USERS[👥 Usuarios Web]
+        ADMINS[👨‍💻 Administradores]
+    end
+    
+    subgraph "Capa de Presentación - DMZ"
+        LB[🔄 HAProxy<br/>Balanceador<br/>Futuro]
+    end
+    
+    subgraph "Capa de Aplicación"
+        APACHE[🌐 Apache 2.4 + PHP 8.1<br/>VirtualHosts]
+        PHP[⚡ PHP-FPM<br/>Pool de procesos]
+    end
+    
+    subgraph "Capa de Datos"
+        MYSQL[(💾 MySQL 8.0<br/>InnoDB)]
+        BK[💿 Backups<br/>mysqldump + rsync]
+    end
+    
+    subgraph "Seguridad Perimetral"
+        UFW[🛡️ UFW Firewall<br/>Reglas stateful]
+        F2B[🚫 Fail2ban<br/>IPS]
+    end
+    
+    subgraph "Monitorización"
+        NET[📊 Netdata<br/>Métricas en tiempo real]
+        ALERT[📧 Alertas Email]
+    end
+    
+    USERS -->|HTTPS 443| LB
+    ADMINS -->|SSH 22| UFW
+    LB -->|HTTP 80| APACHE
+    APACHE -->|FastCGI| PHP
+    PHP -->|localhost:3306| MYSQL
+    UFW -.-> APACHE
+    F2B -.-> UFW
+    APACHE -->|API:19999| NET
+    MYSQL -->|02:00 AM| BK
+    NET -->|Umbral crítico| ALERT
+    
+    style LB fill:#f9f,stroke:#333,stroke-width:2px
+    style APACHE fill:#bbf,stroke:#333,stroke-width:2px
+    style MYSQL fill:#bfb,stroke:#333,stroke-width:2px
+    style UFW fill:#fbb,stroke:#333,stroke-width:2px
 ## 2. Componentes del Sistema
 
 | Componente | Versión | Función |
