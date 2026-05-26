@@ -25,8 +25,8 @@ Documentación técnica completa para el despliegue, operación y recuperación 
 - [ ] Validación final y entrega v1.0
 
 ## 🔗 Enlaces Útiles
-- [GitHub Repository](https://github.com/[TU_USUARIO]/infraestructura-pyme)
-- [Issues Activos](https://github.com/[TU_USUARIO]/infraestructura-pyme/issues)
-- [Release v1.0](https://github.com/[TU_USUARIO]/infraestructura-pyme/releases)
+- [GitHub Repository](https://github.com/vjp-ignacioHD/infraestructura-pyme)
+- [Issues Activos](https://github.com/vjp-ignacioHD/infraestructura-pyme/issues)
+- [Release v1.0](https://github.com/vjp-ignacioHD/infraestructura-pyme/releases)
 
 > ⚠️ Este repositorio contiene **documentación técnica**, no scripts de ejecución automática. Todos los comandos deben validarse en entorno de pruebas antes de aplicar en producción.
