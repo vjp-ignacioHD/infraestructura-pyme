@@ -67,7 +67,8 @@ graph TB
 | MySQL | 8.0 | Gestión de datos |
 | UFW | 0.36.1 | Firewall básico |
 | Fail2ban | 0.11.2 | Protección contra fuerza bruta |
-| Netdata | 1.40+ | Monitorización en tiempo real.. |
+| Netdata | 1.40+ | Monitorización en tiempo real |
+| Certbot | 1.0 | SSL |
 
 ## 3. Diseño de Red
 
