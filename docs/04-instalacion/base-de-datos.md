@@ -1,11 +1,18 @@
+# 🗄️ Base de Datos MySQL / MariaDB
+
+> 📌 **Objetivo:** Instalar, asegurar y configurar el servidor de bases de datos para las aplicaciones web y de gestión interna de la PYME.
 
 ---
 
-### 📄 `docs/04-instalacion/base-de-datos.md`
-```markdown
-# ️ Base de Datos MySQL
+## 1. Instalación del Servidor
 
-## 1. Instalación y Aseguramiento
+### 1.1. Instalación con apt
 ```bash
+# Actualizar repositorios
+sudo apt update && sudo apt upgrade -y
+
+# Instalar MySQL Server
 sudo apt install mysql-server -y
-sudo mysql_secure_installation
+
+# Verificar que el servicio está corriendo
+sudo systemctl status mysql
