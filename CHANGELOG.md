@@ -1,25 +1,63 @@
-# Changelog
+# 📝 Changelog
 
-Todos los cambios notables en este proyecto se documentan aquí.  
-Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.1.0/).
+Todos los cambios notables del proyecto "Infraestructura PYME".
 
-## [1.0.0] - 2026-05-23
-### Added
-- Estructura completa de documentación LAMP
-- Guías de instalación, hardening y operación
-- Plan de recuperación ante desastres
-- Integración de monitorización y backups automatizados
-- Flujo Git con PRs, revisión cruzada y resolución de conflictos
+## [v1.0] - 2026-05-29
 
-### Changed
-- Migración de borradores a versión estable
-- Unificación de estilos Markdown y enlaces internos
+### Añadido
+- Balanceador HAProxy delante del servidor Apache (Sesión 4)
+- Sección de configuración de HAProxy en `docs/02-diseno.md`
+- Tareas de mantenimiento para el balanceador
+- Fase de balanceo en `docs/03-planificacion.md`
+- Archivo `REVISION.md` con reflexión del proyecto
 
-### Fixed
-- Corrección de rutas en enlaces relativos
-- Actualización de versiones de software a Ubuntu 22.04 LTS
+### Cambiado
+- Diagrama de arquitectura actualizado con HAProxy
+- README.md actualizado con el estado final del proyecto
+- Matriz de riesgos ampliada con SPOF de HAProxy
 
-## [0.1.0] - 2026-05-10
-### Added
-- Esqueleto inicial del repositorio
-- README, análisis de requisitos y diseño arquitectónico
+### Corregido
+- Enlaces internos entre documentos
+- Conflictos de merge y rebase resueltos
+
+---
+
+## [Sesión 3] - 2026-05-28
+
+### Añadido
+- Intercambio de roles entre Eva e Ignacio
+- Resolución de conflicto con rebase
+- Documentación de monitorización (`monitorizacion.md`)
+- Política de backups (`backups.md`)
+
+### Cambiado
+- Mejora del firewall con reglas stateful
+- Hardening de seguridad
+
+---
+
+## [Sesión 2] - 2026-05-27
+
+### Añadido
+- Revisión cruzada de código con Pull Requests
+- Resolución de primer conflicto de merge
+- Documentación de instalación LAMP
+
+### Cambiado
+- Estructura del repositorio reorganizada
+- README.md mejorado
+
+---
+
+## [Sesión 1] - 2026-05-26
+
+### Añadido
+- Estructura inicial del repositorio
+- `docs/01-analisis.md` con requisitos y restricciones
+- `docs/02-diseno.md` con arquitectura base
+- `docs/03-planificacion.md` con cronograma
+- Primera versión de `README.md`
+
+### Cambiado
+- Configuración inicial de Git
+- Creación de ramas `main`, `Eva`, `Nacho`
