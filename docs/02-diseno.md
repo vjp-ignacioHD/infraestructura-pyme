@@ -69,6 +69,27 @@ graph TB
 | Fail2ban | 0.11.2 | Protección contra fuerza bruta |
 | Netdata | 1.40+ | Monitorización en tiempo real |
 
+## 2.1. Balanceador HAProxy
+
+| Componente | Versión | Función |
+|------------|---------|---------|
+| HAProxy | 2.6.x | Balanceo de carga round-robin entre servidores web |
+
+### Configuración propuesta
+
+| Directiva | Valor | Propósito |
+|-----------|-------|-----------|
+| `balance` | roundrobin | Distribución equitativa del tráfico |
+| `maxconn` | 2000 | Límite de conexiones simultáneas |
+| `timeout connect` | 5s | Tiempo máximo para establecer conexión |
+| `timeout client` | 50s | Timeout de espera del cliente |
+| `timeout server` | 50s | Timeout de espera del servidor |
+
+### Justificación técnica
+- **Alta disponibilidad**: Permite añadir segundo servidor web sin downtime
+- **Escalabilidad**: Incremento de capacidad horizontal
+- **SSL Termination** (futuro): Descarga SSL en el balanceador
+
 ## 3. Diseño de Red
 
 - **Zona Pública**: Puertos `80/TCP`, `443/TCP`
